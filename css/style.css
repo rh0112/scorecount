@@ -1,0 +1,60 @@
+#point_a{
+	font-family: 'Kumar One', cursive;
+	color:#953025;
+	font-size:12vw;
+}
+#point_b{
+	font-family: 'Kumar One', cursive;
+	color:#953025;
+	font-size:12vw;
+}
+#game_a{
+	font-family: 'Kumar One', cursive;
+	color:#E9B33D;
+	font-size:5vw;
+}
+#game_b{
+	font-family: 'Kumar One', cursive;
+	color:#E9B33D;
+	font-size:5vw;
+}
+#serve_a{
+	color:#D53C35;
+	font-size:3vw;
+}
+#serve_b{
+	color:#D53C35;
+	font-size:3vw;
+}
+td.dummy{
+	color:#1fb27a;
+}
+td.point:active{
+	box-shadow: inset 5px 5px 14px #0c4731,
+            inset -5px -5px 14px #32ffc3;
+}
+td.point{
+	width:40vw;
+	border-radius: 34px;
+	box-shadow:  5px 5px 14px #0c4731,
+             -5px -5px 14px #32ffc3;
+}
+td{
+	text-align: center;
+	vertical-align: middle;
+}
+table{
+	border-collapse: separate;
+	padding:0vh 3vw;
+	height:80vh;
+	width:90vw;
+	margin:10vh 5vw;
+	border-radius: 34px;
+	box-shadow:  5px 5px 14px #0c4731,
+             -5px -5px 14px #32ffc3;
+}
+body{
+	background: #1fb27a;
+	cursor:default;
+	user-select: none;
+}
