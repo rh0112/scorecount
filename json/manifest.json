@@ -2,7 +2,7 @@
   "name"              : "テニススコアカウント",
   "short_name"        : "score count",
   "description"       : "テニスのスコアをカウントします",
-  "start_url"         : "/?pwa=1",
+  "start_url"         : "/",
   "display"           : "standalone",
   "background_color"  : "#1fb27a",
   "theme_color"       : "#1fb27a",
