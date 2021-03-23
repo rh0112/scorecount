@@ -11,14 +11,14 @@ var down_b = 0;
 function change_serve(){
 	if(serve){
 		var change_serve = document.getElementById("serve_a");
-		change_serve.innerHTML = "œ";
+		change_serve.innerHTML = "â—";
 		var change_serve = document.getElementById("serve_b");
 		change_serve.innerHTML = "<br>";
 	}else{
 		var change_serve = document.getElementById("serve_a");
 		change_serve.innerHTML = "<br>";
 		var change_serve = document.getElementById("serve_b");
-		change_serve.innerHTML = "œ";
+		change_serve.innerHTML = "â—";
 	}
 	serve = !serve;
 }
