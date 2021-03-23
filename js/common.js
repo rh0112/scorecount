@@ -86,7 +86,6 @@ function game_up(player){
 	}else if(player == 'b'){
 		change_point.innerHTML = game_b;
 	}
-	console.log("down_a:" + down_a + "down_b" + down_b);
 }
 
 function game_down(player){
