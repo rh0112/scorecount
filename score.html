@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="shift-jis" />
+<title>テニススコアカウント</title>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Kumar+One&display=swap" rel="stylesheet">
+
+<style>
+#point_a{
+	font-family: 'Kumar One', cursive;
+	color:#953025;
+	font-size:12vw;
+}
+#point_b{
+	font-family: 'Kumar One', cursive;
+	color:#953025;
+	font-size:12vw;
+}
+#game_a{
+	font-family: 'Kumar One', cursive;
+	color:#E9B33D;
+	font-size:5vw;
+}
+#game_b{
+	font-family: 'Kumar One', cursive;
+	color:#E9B33D;
+	font-size:5vw;
+}
+#serve_a{
+	color:#D53C35;
+	font-size:3vw;
+}
+#serve_b{
+	color:#D53C35;
+	font-size:3vw;
+}
+td.dummy{
+	color:#1fb27a;
+}
+td.point:active{
+	box-shadow: inset 5px 5px 14px #0c4731,
+            inset -5px -5px 14px #32ffc3;
+}
+td.point{
+	width:40vw;
+	border-radius: 34px;
+	box-shadow:  5px 5px 14px #0c4731,
+             -5px -5px 14px #32ffc3;
+}
+td{
+	text-align: center;
+	vertical-align: middle;
+}
+table{
+	border-collapse: separate;
+	padding:0vh 3vw;
+	height:80vh;
+	width:90vw;
+	margin:10vh 5vw;
+	border-radius: 34px;
+	box-shadow:  5px 5px 14px #0c4731,
+             -5px -5px 14px #32ffc3;
+}
+body{
+	background: #1fb27a;
+	cursor:default;
+	user-select: none;
+}
+</style>
+<script type="text/javascript">
+function test(i){
+	window.alert("test"+i);
+}
+
+var point = [0,15,30,40];
+var point_a = 0;
+var point_b = 0;
+var game_a = 0;
+var game_b = 0;
+var serve = true;
+
+var down_a = 0;
+var down_b = 0;
+
+function change_serve(){
+	if(serve){
+		var change_serve = document.getElementById("serve_a");
+		change_serve.innerHTML = "●";
+		var change_serve = document.getElementById("serve_b");
+		change_serve.innerHTML = "<br>";
+	}else{
+		var change_serve = document.getElementById("serve_a");
+		change_serve.innerHTML = "<br>";
+		var change_serve = document.getElementById("serve_b");
+		change_serve.innerHTML = "●";
+	}
+	serve = !serve;
+}
+
+function point_up(player){
+	if(player == 'a'){
+		if(point_a == 3){
+			game_a ++;
+			game_up('a');
+		}else{
+			point_a ++;
+			var change_point = document.getElementById("point_" + player);
+			change_point.innerHTML = point[point_a];
+		}
+	}else if(player == 'b'){
+		if(point_b == 3){
+			game_b ++;
+			game_up('b');
+		}else{
+			point_b ++;
+			var change_point = document.getElementById("point_" + player);
+			change_point.innerHTML = point[point_b];
+		}
+	}
+	
+}
+
+function point_down(player){
+	if(player == 'a'){
+		if(point_a == 0){
+			game_a --;
+			game_down('a');
+		}else{
+			point_a --;
+			var change_point = document.getElementById("point_" + player);
+			change_point.innerHTML = point[point_a];
+		}
+	}else if(player == 'b'){
+		if(point_b == 0){
+			game_b --;
+			game_down('b');
+		}else{
+			point_b --;
+			var change_point = document.getElementById("point_" + player);
+			change_point.innerHTML = point[point_b];
+		}
+	}
+}
+
+function game_up(player){
+	change_serve();
+
+	down_a = point_a;
+	point_a = 0;
+	var change_point = document.getElementById("point_a");
+	change_point.innerHTML = point[point_a];
+	down_b = point_b;
+	point_b = 0;
+	var change_point = document.getElementById("point_b");
+	change_point.innerHTML = point[point_b];
+
+	var change_point = document.getElementById("game_" + player);
+	if(player == 'a'){
+		change_point.innerHTML = game_a;
+	}else if(player == 'b'){
+		change_point.innerHTML = game_b;
+	}
+	console.log("down_a:" + down_a + "down_b" + down_b);
+}
+
+function game_down(player){
+	change_serve();
+
+	point_a = down_a;
+	var change_point = document.getElementById("point_a");
+	change_point.innerHTML = point[point_a];
+	point_b = down_b;
+	var change_point = document.getElementById("point_b");
+	change_point.innerHTML = point[point_b];
+
+	var change_point = document.getElementById("game_" + player);
+	if(player == 'a'){
+		change_point.innerHTML = game_a;
+	}else if(player == 'b'){
+		change_point.innerHTML = game_b;
+	}
+}
+
+window.onload = function(){
+	change_serve();
+}
+
+</script>
+
+</head>
+
+<body>
+<main>
+
+<table>
+</tr>
+<tr>
+<td><div id="serve_a"><br></div></td>
+<td class="dummy">×</td>
+<td><div id="serve_b"><br></div></td>
+</tr>
+<tr>
+<td class="point" onclick="point_up('a')"><div id="point_a">0</div></td>
+<td class="dummy">×</td>
+<td class="point"onclick="point_up('b')"><div id="point_b">0</div></td>
+</tr>
+<tr>
+<td ondblclick="point_down('a')"><div id="game_a">0</div></td>
+<td class="dummy">×</td>
+<td ondblclick="point_down('b')"><div id="game_b">0</div></td>
+</tr>
+</table>
+
+</main>
+</body>
+</html>
