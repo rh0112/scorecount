@@ -1,7 +1,7 @@
 {
-  "name"              : "ƒeƒjƒXƒXƒRƒAƒJƒEƒ“ƒg",
+  "name"              : "ãƒ†ãƒ‹ã‚¹ã‚¹ã‚³ã‚¢ã‚«ã‚¦ãƒ³ãƒˆ",
   "short_name"        : "score count",
-  "description"       : "ƒeƒjƒX‚ÌƒXƒRƒA‚ğƒJƒEƒ“ƒg‚·‚é‚à‚Ì",
+  "description"       : "ãƒ†ãƒ‹ã‚¹ã®ã‚¹ã‚³ã‚¢ã‚’ã‚«ã‚¦ãƒ³ãƒˆã—ã¾ã™",
   "start_url"         : "/?pwa=1",
   "display"           : "standalone",
   "background_color"  : "#1fb27a",
